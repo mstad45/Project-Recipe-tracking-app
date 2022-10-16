@@ -1,6 +1,34 @@
 import React from "react";
 
-function RecipeList() {
+function RecipeList({ recipes, createRecipe, deleteRecipe}) {
+
+  function handleDeleteOnClick(index) {
+    deleteRecipe(index);
+  }
+
+  let rows=recipe.map(({name,cuisine, photo,ingredients, preparation}, index) =>{
+    return (
+      <tr key={index}>
+        <td>{name}</td>
+        <td>{cuisine}</td>
+        <td>
+          <img src={photo} alt="Recipe" />
+        </td>
+        <td className="content_td">
+          <p>{ingredients}</p>
+        </td>
+        <td className="content_td">
+          <p>{preparation}</p>
+        </td>
+        <td>
+          <button name="delete" onClick={() => handleDeleteOnClick(index)}>
+            Delete
+          </button>
+        </td>
+      </tr>
+    );
+  });
+  });
   
   // TODO: Display the list of recipes using the structure of table that is provided.
   // TODO: Create at least one additional component that is used by this component.
@@ -11,12 +39,16 @@ function RecipeList() {
       <table>
         <thead>
           <tr>
-            <th></th>
+            <th>Name</th>
+            <th>Cuisine</th>
+            <th>Photo</th>
+            <th>Ingredients</th>
+            <th>Preparation</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-        
+          {rows}
         </tbody>
       </table>
     </div>
