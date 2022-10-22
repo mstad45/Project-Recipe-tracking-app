@@ -10,16 +10,17 @@ function RecipeCreate({recipes, createRecipe}) {
     preparation: "",
   };
 
-  const [formData, setFormData] = useState({...initialFormState});
+  const [formData, setFormData] = useState({ ...initialFormState });
 
-  const onChange = ({target}) => setFormData({...formData, [target.name]: target.value});
+  const onChange = ({target}) => setFormData({ ...formData, [target.name]: target.value });
 
   const handleSubmit = (event) => {
     event.preventDefault();
     createRecipe(formData);
 
-    setFormData({...initialFormState});
-  }
+    setFormData({ ...initialFormState });
+  };
+
 
   // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
   // TODO: Add the required input and textarea form elements.
@@ -35,6 +36,7 @@ function RecipeCreate({recipes, createRecipe}) {
                 onChange={onChange}
                 value={formData.name}
                 id="name"
+                name="name"
                 type="text"
                 placeholder="Name"
                 required={true}
@@ -93,5 +95,4 @@ function RecipeCreate({recipes, createRecipe}) {
     </form>
   );
 }
-
 export default RecipeCreate;
