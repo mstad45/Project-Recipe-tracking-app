@@ -7,7 +7,7 @@ function RecipeList({ recipes, createRecipe, deleteRecipe }) {
     deleteRecipe(index);
   }
 
-  let rows = recipes.map(({ name, cuisine, photo, ingredients, preparation }, index) => {
+  const rows = recipes.map(({ name, cuisine, photo, ingredients, preparation }, index) => {
     return (
       <tr key={index}>
         <td>{name}</td>
