@@ -60,7 +60,7 @@ table {
   text-overflow: ellipsis;
 }
 
-tdoby tr: nth-child(odd) {
+tbody tr:nth-child(odd) {
   background-color: #fff0c7;
 }
 
